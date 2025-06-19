@@ -1,0 +1,92 @@
+/* public/assets/css/style.css */
+
+/* Cores do IFAM */
+:root {
+    --cor-principal: #006633; /* Um tom de verde do IFAM */
+    --cor-secundaria: #ffffff; /* Branco */
+    --cor-texto: #333; /* Um cinza escuro para o texto */
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+h1, h2, h3 {
+    color: var(--cor-principal);
+}
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclui padding e borda no width */
+}
+
+/* Estilos básicos para formulários */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto; /* Centraliza o formulário */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para mensagens de feedback (erros, sucesso) */
+.mensagem-erro {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.mensagem-sucesso {
+    color: green;
+    margin-bottom: 10px;
+}
+
+/* Layout simples para os painéis (exemplo) */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Adicione mais estilos conforme necessário para tabelas, listas, etc. */

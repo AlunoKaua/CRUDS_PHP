@@ -1,24 +1,50 @@
 <?php
 // filepath: /app/models/Sala.php
-require_once __DIR__ . '/../../config/database.php';
 
-class Sala {
-    public static function criar($nome, $id_professor) {
-        $pdo = Database::getInstance();
-        $stmt = $pdo->prepare("INSERT INTO salas (nome, id_professor) VALUES (?, ?)");
-        $stmt->execute([$nome, $id_professor]);
-        return $pdo->lastInsertId();
+class Sala extends Model { // Extender uma classe base Model (a ser criada)
+    protected $table = 'salas'; // Nome da tabela
+
+    public function create($data) {
+        // Método para criar uma nova sala
+        // Implementar lógica de inserção no banco de dados
     }
 
-    public static function listar() {
-        $pdo = Database::getInstance();
-        return $pdo->query("SELECT salas.*, usuarios.nome as professor FROM salas JOIN usuarios ON salas.id_professor = usuarios.id")->fetchAll(PDO::FETCH_ASSOC);
+    public function getAll() {
+        // Método para listar todas as salas
+        // Implementar lógica de consulta no banco de dados
     }
 
-    public static function associarAluno($id_aluno, $id_sala) {
+    public function findByNome($nome) {
+        // Método para encontrar uma sala pelo nome
         $pdo = Database::getInstance();
-        $stmt = $pdo->prepare("INSERT IGNORE INTO alunos_salas (id_aluno, id_sala) VALUES (?, ?)");
-        $stmt->execute([$id_aluno, $id_sala]);
+        $stmt = $pdo->prepare("SELECT * FROM {$this->table} WHERE nome = ?");
+        $stmt->execute([$nome]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+}
+?>
+<?php
+// filepath: /app/models/Sala.php
+
+class Sala extends Model { // Extender uma classe base Model (a ser criada)
+    protected $table = 'salas'; // Nome da tabela
+
+    public function create($data) {
+        // Método para criar uma nova sala
+        // Implementar lógica de inserção no banco de dados
+    }
+
+    public function getAll() {
+        // Método para listar todas as salas
+        // Implementar lógica de consulta no banco de dados
+    }
+
+    public function findByNome($nome) {
+        // Método para encontrar uma sala pelo nome
+        $pdo = Database::getInstance();
+        $stmt = $pdo->prepare("SELECT * FROM {$this->table} WHERE nome = ?");
+        $stmt->execute([$nome]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
 ?>

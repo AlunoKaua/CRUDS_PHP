@@ -1,4 +1,16 @@
 <?php
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Painel do Administrador</title>
+</head>
+<body>
+    <h2>Painel do Administrador</h2>
+    <p>Conteúdo do painel administrativo aqui.</p>
+</body>
+</html>
+<?php
 <!DOCTYPE html>
 <html>
 <head>
