@@ -1,0 +1,2 @@
+<?php
+// Resposta.php

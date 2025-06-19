@@ -1,0 +1,2 @@
+<?php
+// SalaController.php
